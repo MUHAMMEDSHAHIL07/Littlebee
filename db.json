@@ -1,0 +1,295 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "name": "Electric Ride",
+      "price": 2000,
+      "image": "https://i.pinimg.com/736x/cf/a4/2f/cfa42f0f50727c707f21588f952716d7.jpg",
+      "category": "Toys",
+      "gender": "Boys"
+    },
+    {
+      "id": "3",
+      "name": "Wooden Train Toy",
+      "price": 450,
+      "image": "https://i.pinimg.com/736x/9d/92/01/9d92014bef9f425fce0a36cb5abf7791.jpg",
+      "category": "Toys",
+      "gender": "Girls"
+    },
+    {
+      "id": "4",
+      "name": "Wooden Animal Toy Set",
+      "price": 550,
+      "image": "https://i.pinimg.com/736x/9c/1f/80/9c1f80598760ef8e3286b2fe636776e3.jpg",
+      "category": "Toys",
+      "gender": "Girls"
+    },
+    {
+      "id": "5",
+      "name": "Rapid Racer Blue Car",
+      "price": 4500,
+      "image": "https://i.pinimg.com/736x/c5/88/9a/c5889ae454817fa96da4cd2330f1d99e.jpg",
+      "category": "Toys",
+      "gender": "Boys"
+    },
+    {
+      "id": "6",
+      "name": "Plain White Shirt",
+      "price": 950,
+      "image": "https://i.pinimg.com/736x/33/85/e9/3385e95d0e5f0748a490dc2db4824e58.jpg",
+      "category": "Clothes",
+      "gender": "Boys"
+    },
+    {
+      "id": "7",
+      "name": "Baby Girl Frock",
+      "price": 1250,
+      "image": "https://i.pinimg.com/736x/63/fd/ea/63fdea26beade43f99805831c1627d7d.jpg",
+      "category": "Clothes",
+      "gender": "Girls"
+    },
+    {
+      "id": "8",
+      "name": "Cozy Hoodie Dress",
+      "price": 1100,
+      "image": "https://i.pinimg.com/736x/b7/48/05/b74805907975b30c450ece554a17cc78.jpg",
+      "category": "Clothes",
+      "gender": "Girls"
+    },
+    {
+      "id": "9",
+      "name": "Baseball Cap Brown",
+      "price": 350,
+      "image": "https://i.pinimg.com/736x/e6/93/e2/e693e2576ce80302dd0074b13d803837.jpg",
+      "category": "Caps",
+      "gender": "Boys"
+    },
+    {
+      "id": "10",
+      "name": "Nike Sport Cap",
+      "price": 750,
+      "image": "https://i.pinimg.com/736x/49/ae/57/49ae5726922277e2b69a067ad17d2017.jpg",
+      "category": "Caps",
+      "gender": "Boys"
+    },
+    {
+      "id": "11",
+      "name": "Superhero Cap",
+      "price": 350,
+      "image": "https://i.pinimg.com/736x/10/b5/e7/10b5e7b72185077470708d1e5b29b58c.jpg",
+      "category": "Caps",
+      "gender": "Girls"
+    },
+    {
+      "id": "12",
+      "name": "Hoodie",
+      "price": 1500,
+      "image": "https://i.pinimg.com/736x/d1/5b/fc/d15bfc3595214f12bd6a11b4e2ed04bc.jpg",
+      "category": "Clothes",
+      "gender": "Boys"
+    },
+    {
+      "id": "13",
+      "name": "Striped Kids Hoodie",
+      "price": 1800,
+      "image": "https://i.pinimg.com/736x/05/24/a6/0524a665d74b450daf4b609c1f14d909.jpg",
+      "category": "Clothes",
+      "gender": "Girls"
+    },
+    {
+      "id": "14",
+      "name": "Warm Winter Cap",
+      "price": 350,
+      "image": "https://i.pinimg.com/736x/bc/6e/78/bc6e78f8ec07aa338e8aa33ba163b941.jpg",
+      "category": "Caps",
+      "gender": "Girls"
+    },
+    {
+      "id": "15",
+      "name": "Soft Wool Cap",
+      "price": 280,
+      "image": "https://i.pinimg.com/736x/52/ad/e7/52ade7a2bc4ec32c20fb56bcc8f76120.jpg",
+      "category": "Caps",
+      "gender": "Girls"
+    },
+    {
+      "id": "16",
+      "name": "Black Jeep",
+      "price": 3500,
+      "image": "https://i.pinimg.com/736x/ba/f1/ce/baf1cecb7e045abea89f16bf649cc1cd.jpg",
+      "category": "Toys",
+      "gender": "Boys"
+    },
+    {
+      "id": "18",
+      "name": "Helicopter Toy",
+      "price": 850,
+      "image": "https://i.pinimg.com/736x/d9/c0/3c/d9c03c1df2fb61f0c8e0c277c7487516.jpg",
+      "category": "Toys",
+      "gender": "Boys"
+    },
+    {
+      "id": "19",
+      "name": "Educational Phone Toy",
+      "price": 450,
+      "image": "https://i.pinimg.com/736x/10/69/ab/1069abefb24acafe87208e2854e2c6dd.jpg",
+      "category": "Toys",
+      "gender": "Girls"
+    },
+    {
+      "id": "20",
+      "name": "Baby Walker",
+      "price": 2100,
+      "image": "https://i.pinimg.com/736x/61/9e/df/619edfebe79c552335181c02d5015417.jpg",
+      "category": "Toys",
+      "gender": "Boys"
+    },
+    {
+      "id": "21",
+      "name": "Ronnie Set TShirt",
+      "price": 1250,
+      "image": "https://i.pinimg.com/736x/88/54/43/8854434801c40612ec56774d20bb0749.jpg",
+      "category": "Toys",
+      "gender": "Boys"
+    },
+    {
+      "id": "22",
+      "name": "Aaron Short Sleeved Shirt ",
+      "price": "750",
+      "image": "https://i.pinimg.com/736x/8e/9e/d2/8e9ed2198afa596b106b3f9ab969bc1f.jpg",
+      "category": "Clothes",
+      "gender": "Boys"
+    },
+    {
+      "id": "4e5e",
+      "name": "Girls Floral Print Hoodie",
+      "price": "650",
+      "image": "https://i.pinimg.com/736x/b4/b6/bd/b4b6bd5a635d5c60ceb98e33ef956d35.jpg",
+      "category": "Clothes",
+      "gender": "Girls"
+    },
+    {
+      "id": "73fb",
+      "name": "Globber Learning Bike ",
+      "price": "1500",
+      "image": "https://i.pinimg.com/736x/0b/5b/38/0b5b389dea065f1df98eaaa488c579d0.jpg",
+      "category": "Toys",
+      "gender": "Girls"
+    },
+    {
+      "id": "6cfc",
+      "name": "NEW PRODUCT ",
+      "price": "500",
+      "image": "https://i.pinimg.com/736x/01/c2/2d/01c22d9e4ddf791b4f5bda722a3d811f.jpg",
+      "category": "Clothes",
+      "gender": "Boys"
+    }
+  ],
+  "user": [
+    {
+      "id": "1683",
+      "name": "SHAHIL",
+      "email": "muhammedshahil7012@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "cart": [
+        {
+          "id": "16",
+          "name": "Black Jeep",
+          "price": 3500,
+          "image": "https://i.pinimg.com/736x/ba/f1/ce/baf1cecb7e045abea89f16bf649cc1cd.jpg",
+          "category": "Toys",
+          "gender": "Boys"
+        },
+        {
+          "id": "6",
+          "name": "Plain White Shirt",
+          "price": 950,
+          "image": "https://i.pinimg.com/736x/33/85/e9/3385e95d0e5f0748a490dc2db4824e58.jpg",
+          "category": "Clothes",
+          "gender": "Boys",
+          "quantity": 18
+        }
+      ],
+      "isAdmin": true,
+      "isActive": true,
+      "orders": []
+    },
+    {
+      "id": "876b",
+      "name": "AJSAL",
+      "email": "ajsal123@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "cart": [],
+      "isActive": true,
+      "orders": [
+        {
+          "userId": "876b",
+          "item": {
+            "id": "3",
+            "name": "Wooden Train Toy",
+            "price": 450,
+            "image": "https://i.pinimg.com/736x/9d/92/01/9d92014bef9f425fce0a36cb5abf7791.jpg",
+            "category": "Toys",
+            "gender": "Girls"
+          },
+          "price": 450
+        },
+        {
+          "userId": "876b",
+          "item": {
+            "id": "1",
+            "name": "New York Moonstar Shirt",
+            "price": 500,
+            "image": "https://i.pinimg.com/736x/f3/19/6d/f3196d125099a5c117ac2119783a8b5f.jpg",
+            "category": "Clothes",
+            "gender": "Boys"
+          },
+          "price": 500
+        }
+      ]
+    },
+    {
+      "id": "3458",
+      "name": "shahil",
+      "email": "anwarshahil7736@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "cart": [
+        {
+          "id": "5",
+          "name": "Rapid Racer Blue Car",
+          "price": 4500,
+          "image": "https://i.pinimg.com/736x/c5/88/9a/c5889ae454817fa96da4cd2330f1d99e.jpg",
+          "category": "Toys",
+          "gender": "Boys"
+        }
+      ],
+      "isActive": true,
+      "orders": [
+        {
+          "userId": "3458",
+          "item": {
+            "id": "6",
+            "name": "Plain White Shirt",
+            "price": 950,
+            "image": "https://i.pinimg.com/736x/33/85/e9/3385e95d0e5f0748a490dc2db4824e58.jpg",
+            "category": "Clothes",
+            "gender": "Boys"
+          },
+          "price": 950
+        }
+      ]
+    },
+    {
+      "id": "465a",
+      "name": "HARSHAD",
+      "email": "harshad123@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "cart": [],
+      "isActive": true
+    }
+  ]
+}
