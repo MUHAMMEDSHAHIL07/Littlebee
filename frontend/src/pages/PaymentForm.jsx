@@ -15,7 +15,7 @@ const PaymentForm = () => {
   const [order, setOrder] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/${userId}`)
+    axios.get(`https://package-0ar8.onrender.com/user/${userId}`)
       .then((response) => {
         setCart(response.data.cart || []);
         setOrder(response.data.orders || []);
@@ -23,7 +23,7 @@ const PaymentForm = () => {
       .catch((err) => console.log(err, "err"));
 
     if (id !== "null") {
-      axios.get(`http://localhost:5000/products/${id}`)
+      axios.get(`https://package-0ar8.onrender.com/products/${id}`)
         .then((response) => setProduct(response.data))
         .catch((err) => console.log(err, "err"));
     }
@@ -31,7 +31,7 @@ const PaymentForm = () => {
 
   const clearCart = (userId) => {
     const updatedCart = id === "null" ? [] : cart.filter((item) => item.id !== id);
-    axios.patch(`http://localhost:5000/user/${userId}`, { cart: updatedCart })
+    axios.patch(`https://package-0ar8.onrender.com/user/${userId}`, { cart: updatedCart })
       .then(() => console.log("Cart updated successfully."))
       .catch((err) => {
         console.error("Error clearing cart:", err);
@@ -53,7 +53,7 @@ const PaymentForm = () => {
         item: id === "null" ? cart : product,
         price: id === "null" ? totalPrice : product?.price || 0,
       };
-      axios.patch(`http://localhost:5000/user/${userId}`, { orders: [...(order || []), orderDetails] })
+      axios.patch(`https://package-0ar8.onrender.com/user/${userId}`, { orders: [...(order || []), orderDetails] })
         .then(() => {
           clearCart(userId);
           Swal.fire({
@@ -67,7 +67,7 @@ const PaymentForm = () => {
           Swal.fire({
             icon: "error",
             title: "Payment Failed",
-            text: err.response?.data?.message || "Payment failed, please try again!",
+            text: err.response?.data?.message || "Payment failed, please login!",
           });
         });
     },

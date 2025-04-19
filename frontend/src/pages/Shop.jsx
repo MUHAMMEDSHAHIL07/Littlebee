@@ -12,7 +12,7 @@ const Shop = () => {
   useEffect(() => {
     const data = location.state?.value || "";
     console.log(data);
-    axios.get(`http://localhost:5000/products`)
+    axios.get(`https://package-0ar8.onrender.com/products`)
       .then((response) => 
         data ? 
         setProducts(response.data.filter((item) => item.gender.includes(data) || item.category.includes(data))) : 

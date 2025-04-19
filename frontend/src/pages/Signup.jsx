@@ -21,7 +21,7 @@ const Signup = () => {
     validationSchema: SignupSchema,
     onSubmit: (values) => {
       axios
-        .post("http://localhost:5000/user", values)
+        .post("https://package-0ar8.onrender.com/user", values)
         .then((response) => {
           console.log(response);
           toast.success('User registered successfully! Please login'); 

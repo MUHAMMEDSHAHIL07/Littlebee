@@ -41,7 +41,7 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user")
+      .get("https://package-0ar8.onrender.com/user")
       .then((response) => setStoreData(response.data))
       .catch((error) => console.log(error));
   }, []);

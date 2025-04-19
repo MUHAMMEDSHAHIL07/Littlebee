@@ -9,7 +9,7 @@ const Cart = () => {
   const {setConCart}=useContext(ContextCart)
   useEffect(() => {
     if (!userId) return;
-    axios.get(`http://localhost:5000/user/${userId}`)
+    axios.get(`https://package-0ar8.onrender.com/user/${userId}`)
       .then((res) => {
         setCart(res.data.cart)
       })
@@ -17,7 +17,7 @@ const Cart = () => {
   }, [userId])
   const remove = (idForDel) => {
     const filteredCart = cart.filter((elem) => elem.id !== idForDel);
-    axios.patch(`http://localhost:5000/user/${userId}`, { cart: filteredCart })
+    axios.patch(`https://package-0ar8.onrender.com/user/${userId}`, { cart: filteredCart })
       .then(() =>{
         setCart(filteredCart)
         setConCart(cart.length-1)
@@ -31,7 +31,7 @@ const Cart = () => {
       product.id === id ? { ...product, quantity: newQuantity } : product
     );
 
-    axios.patch(`http://localhost:5000/user/${userId}`, { cart: updatedCart })
+    axios.patch(`https://package-0ar8.onrender.com/user/${userId}`, { cart: updatedCart })
       .then(() => setCart(updatedCart))
       .catch(err => console.log("error:", err));
   };

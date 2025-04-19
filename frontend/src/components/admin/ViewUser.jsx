@@ -21,14 +21,14 @@ const ViewUser = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user")
+      .get("https://package-0ar8.onrender.com/user")
       .then((res) => setUser(res.data))
       .catch((error) => console.log(error));
   }, []);
 
   const Blockuser = (id) => {
     axios
-      .patch(`http://localhost:5000/user/${id}`, { isActive: false })
+      .patch(`https://package-0ar8.onrender.com/user/${id}`, { isActive: false })
       .then(() => {
         setUser((prevUsers) =>
           prevUsers.map((user) =>
@@ -42,7 +42,7 @@ const ViewUser = () => {
 
   const Unblockuser = (id) => {
     axios
-      .patch(`http://localhost:5000/user/${id}`, { isActive: true })
+      .patch(`https://package-0ar8.onrender.com/user/${id}`, { isActive: true })
       .then(() => {
         setUser((prevUsers) =>
           prevUsers.map((user) =>

@@ -15,7 +15,7 @@ const Navbar = () => {
   useEffect(() => {
     if (userid) {
       axios
-        .get(`http://localhost:5000/user/${userid}`)
+        .get(`https://package-0ar8.onrender.com/user/${userid}`)
         .then((response) => {
           setUserdata(response.data)
           setConCart(response.data.cart.length)

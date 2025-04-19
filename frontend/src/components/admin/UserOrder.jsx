@@ -14,7 +14,7 @@ const UserOrder = () => {
   const {id} = useParams()
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/user/${id}`)
+      .get(`https://package-0ar8.onrender.com/user/${id}`)
       .then((response) => {
         setOrders(response.data.orders || []);
       })

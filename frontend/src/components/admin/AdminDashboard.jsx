@@ -20,14 +20,14 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://package-0ar8.onrender.com/products")
       .then((response) => setProducts(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user/")
+      .get("https://package-0ar8.onrender.com/user/")
       .then((response) => setUsers(response.data))
       .catch((error) => console.log(error));
   }, []);

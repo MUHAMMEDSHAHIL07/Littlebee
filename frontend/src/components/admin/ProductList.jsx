@@ -20,14 +20,14 @@ const ProductList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://package-0ar8.onrender.com/products")
       .then((response) => setProducts(response.data))
       .catch((err) => console.log(err));
   }, []);
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/products/${id}`)
+      .delete(`https://package-0ar8.onrender.com/products/${id}`)
       .then(() => {
         toast.success("Item deleted");
         setProducts(products.filter((item) => item.id !== id));

@@ -7,7 +7,7 @@ const OrderList = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/user/${userId}`)
+      .get(`https://package-0ar8.onrender.com/user/${userId}`)
       .then((response) => {
         setOrders(response.data.orders || []);
       })

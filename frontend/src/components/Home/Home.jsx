@@ -23,12 +23,12 @@ const Home = () => {
           <span className="text-black italic font-extrabold">Little Bee</span>
         </motion.h1>
 
-        {/* Button Animation */}
+
         <motion.button
           className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 2, ease: "easeOut" }} 
+          animate={{ opacity: 1, y: 20 }} 
+          transition={{ duration: 3, ease: "easeOut" }} 
           onClick={() => navigate("/shop")}
         >
           Shop Now

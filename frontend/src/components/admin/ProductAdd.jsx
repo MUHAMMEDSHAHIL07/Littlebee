@@ -25,7 +25,7 @@ const ProductAdd = () => {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/products", product)
+      .post("https://package-0ar8.onrender.com/products", product)
       .then(() => {
         toast.success("Product added successfully!");
         navigate("/admin");

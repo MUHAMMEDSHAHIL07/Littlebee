@@ -20,7 +20,7 @@ useEffect(() => {
   }
 }, []);
 useEffect(()=>{
-    axios.get(`http://localhost:5000/products/${id}`)
+    axios.get(`https://package-0ar8.onrender.com/products/${id}`)
     .then((response)=>setProduct(response.data))
     .catch(err=>console.log(err))
 },[id])
@@ -29,7 +29,7 @@ const handleChange= (e)=>{
 }
 const submit = (e)=>{
     e.preventDefault()
-    axios.patch(`http://localhost:5000/products/${id}`, product)
+    axios.patch(`https://package-0ar8.onrender.com/products/${id}`, product)
     .then((response)=>toast.success("Succesfull edited"))
     .catch(err=>console.log(err))
     navigate(`/admin/product/${id}`)

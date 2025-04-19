@@ -16,14 +16,14 @@ const Productpage = () => {
   useEffect(() => {
     if (!userid) return;
     axios
-      .get(`http://localhost:5000/user/${userid}`)
+      .get(`https://package-0ar8.onrender.com/user/${userid}`)
       .then((response) => setCart(response.data.cart))
       .catch((error) => console.log(error));
   }, [userid]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://package-0ar8.onrender.com/products/${id}`)
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
   }, [id]);
@@ -34,7 +34,7 @@ const Productpage = () => {
     if (same === undefined) {
       const updatedCart = [...cart, data];
       axios
-        .patch(`http://localhost:5000/user/${userid}`, { cart: updatedCart })
+        .patch(`https://package-0ar8.onrender.com/user/${userid}`, { cart: updatedCart })
         .then(() => {
           setConCart((prev)=>prev+1)
           setCart(updatedCart);

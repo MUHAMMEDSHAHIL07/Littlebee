@@ -3,7 +3,7 @@ import axios from 'axios'
 const Toys = () => {
 const [products,setProducts] = useState([])
 useEffect(()=>{
-    axios.get("http://localhost:5000/products")
+    axios.get("https://package-0ar8.onrender.com/products")
     .then((response)=>setProducts(response.data))
     .catch(error=>console.error("something worng",error))
 })

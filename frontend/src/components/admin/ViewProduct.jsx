@@ -13,7 +13,7 @@ useEffect(() => {
   }
 }, [userId, navigate]);
 useEffect(()=>{
-    axios.get(`http://localhost:5000/products/${id}`)
+    axios.get(`https://package-0ar8.onrender.com/products/${id}`)
     .then((response)=>setProduct(response.data))
     .catch(err=>console.log(err))
 },[id])
