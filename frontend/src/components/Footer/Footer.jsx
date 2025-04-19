@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
@@ -7,7 +8,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">Little Bee</h3>
-            <p className="text-sm mb-4">Your one-stop shop for all baby needs! Safe, affordable, and adorable products for your little one.</p>
+            <p className="text-sm mb-4">
+              Your one-stop shop for all baby needs! Safe, affordable, and adorable products for your little one.
+            </p>
             <p className="text-sm">© 2025 Little Bee. All rights reserved.</p>
           </div>
           <div>
@@ -45,4 +48,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
