@@ -86,7 +86,7 @@ const ViewUser = () => {
         <input
           type="text"
           placeholder="Search users..."
-          className="w-full p-2 border rounded mb-4"
+          className="w-full p-2 border rounded mb-4 mt-15"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
