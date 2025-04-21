@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { useLocation, useParams } from "react-router-dom";
+import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useFormik } from "formik";
 import { PaymentValidation } from "./PaymentValidation";
@@ -13,6 +13,7 @@ const PaymentForm = () => {
   const [product, setProduct] = useState(null);
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios.get(`https://package-0ar8.onrender.com/user/${userId}`)
@@ -60,6 +61,9 @@ const PaymentForm = () => {
             icon: "success",
             title: "Payment Successful",
             text: "Your payment has been processed successfully!",
+          })
+          .then(()=>{
+            navigate("/shop")
           });
         })
         .catch((err) => {
