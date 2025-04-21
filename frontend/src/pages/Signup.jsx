@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { SignupSchema } from '../Schema';
@@ -13,6 +13,7 @@ const initialValues = {
   cart: [],
   isActive:true
 };
+
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -34,6 +35,10 @@ const Signup = () => {
       console.log('Form Submitted:', values);
     },
   });
+  const buttonref = useRef()
+  useEffect(()=>{
+     buttonref.current.focus()
+  })
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-pink-100">
@@ -48,6 +53,7 @@ const Signup = () => {
               value={values.name}
               onBlur={handleBlur}
               onChange={handleChange}
+              ref={buttonref}
               className="w-full px-4 py-3 bg-gray-100 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400 outline-none"
             />
             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}

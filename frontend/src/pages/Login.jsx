@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
@@ -12,6 +12,7 @@ const initialValues = {
 const Login = () => {
   const navigate = useNavigate();
   const [data, setStoreData] = useState([]);
+  const buttonref = useRef()
 
   useEffect(() => {
     axios
@@ -19,6 +20,9 @@ const Login = () => {
       .then((response) => setStoreData(response.data))
       .catch((error) => console.log(error));
   }, []);
+  useEffect(()=>{
+      buttonref.current.focus()
+  })
 
   const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues,
@@ -64,6 +68,7 @@ const Login = () => {
               onBlur={handleBlur}
               autoComplete="new-password"
               onChange={handleChange}
+              ref={buttonref}
               className="w-full px-4 py-3 bg-gray-100 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400 outline-none"
               required
             />
