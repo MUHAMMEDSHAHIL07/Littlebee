@@ -6,20 +6,28 @@ const Shop = () => {
   const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
-  
+
   useEffect(() => {
     const data = location.state?.value || "";
-    console.log(data);
+    setLoading(true);
     axios.get(`https://package-0ar8.onrender.com/products`)
-      .then((response) => 
-        data ? 
-        setProducts(response.data.filter((item) => item.gender.includes(data) || item.category.includes(data))) : 
-        setProducts(response.data)
-      )
-      .catch((error) => console.error(error));
-      setCurrentPage(1)
+      .then((response) => {
+        const filteredData = data
+          ? response.data.filter((item) =>
+              item.gender.includes(data) || item.category.includes(data)
+            )
+          : response.data;
+        setProducts(filteredData);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false); 
+      });
+    setCurrentPage(1);
   }, [location]);
 
   const filteredProducts = products.filter((product) =>
@@ -28,7 +36,6 @@ const Shop = () => {
     product.gender.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Pagination Logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
@@ -39,6 +46,7 @@ const Shop = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mt-20">
         SHOP<span className="text-blue-500"> NOW</span>
       </h2>
+
       <div className="flex justify-center my-4">
         <input
           type="text"
@@ -49,14 +57,23 @@ const Shop = () => {
         />
       </div>
 
-      {currentProducts.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center mt-20">
+          <div className="w-12 h-12 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+        </div>
+      ) : currentProducts.length === 0 ? (
         <p className="text-xl text-gray-500 mt-4">No items found</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-2.5">
           {currentProducts.map((product) => (
             <Link to={`/product/${product.id}`} key={product.id}>
               <div className="bg-white shadow-lg rounded-lg p-4 text-center transition-transform transform hover:scale-105">
-                <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded" />
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  loading="lazy"
+                  className="w-full h-48 object-cover rounded"
+                />
                 <h2 className="text-lg font-semibold mt-2 text-purple-800">{product.name}</h2>
                 <p className="text-gray-600">₹{product.price}</p>
               </div>
@@ -65,24 +82,19 @@ const Shop = () => {
         </div>
       )}
 
-      {/* Pagination Controls */}
-      {totalPages > 1 && (
+      {totalPages > 1 && !loading && (
         <div className="flex justify-center mt-6 space-x-2 mb-10">
-          {(() => {
-            let buttons = [];
-            for (let i = 1; i <= totalPages; i++) {
-              buttons.push(
-                <button
-                  key={i}
-                  onClick={() => setCurrentPage(i)}
-                  className={`px-4 py-2 rounded ${currentPage === i ? 'bg-blue-600 text-white' : 'bg-gray-300'}`}
-                >
-                  {i}
-                </button>
-              );
-            }
-            return buttons;
-          })()}
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i + 1}
+              onClick={() => setCurrentPage(i + 1)}
+              className={`px-4 py-2 rounded ${
+                currentPage === i + 1 ? 'bg-blue-600 text-white' : 'bg-gray-300'
+              }`}
+            >
+              {i + 1}
+            </button>
+          ))}
         </div>
       )}
     </div>
