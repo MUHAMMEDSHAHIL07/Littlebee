@@ -11,7 +11,7 @@ const ViewUser = () => {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const userId = localStorage.getItem("id");
-  const [postPerPage] = useState(4);
+  const [postPerPage] = useState(5);
   const navigate = useNavigate();
   useEffect(() => {
     if (userId !== "1683") {

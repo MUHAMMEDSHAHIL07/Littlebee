@@ -2,41 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { toast } from 'react-toastify'; 
+import { toast } from 'react-toastify';
 
 const initialValues = {
   email: '',
   password: '',
 };
+
 const Login = () => {
   const navigate = useNavigate();
-  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues,
-    onSubmit: (values) => {
-      const store = data.find(item => item.email === values.email && item.password === values.password);
-      if(store.isActive===true){
-        navigate("/") 
-      }
-      else{
-        toast.info("This user is restricted by admin")
-        return
-      }
-      if (store.isAdmin===true){
-        localStorage.setItem("id", store.id);
-        navigate('/admin')
-      }
-      else if (store) {
-        localStorage.setItem("id", store.id);
-        toast.success('Login successful!'); 
-        navigate('/'); 
-      }
-      else {
-        toast.error('Invalid email or password!'); 
-        console.log("Invalid user");
-      }
-    },
-  });
-
   const [data, setStoreData] = useState([]);
 
   useEffect(() => {
@@ -45,6 +19,35 @@ const Login = () => {
       .then((response) => setStoreData(response.data))
       .catch((error) => console.log(error));
   }, []);
+
+  const { values, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      const store = data.find(
+        (item) => item.email === values.email && item.password === values.password
+      );
+
+      if (!store) {
+        toast.error('Invalid email or password!');
+        console.log("Invalid user");
+        return;
+      }
+
+      if (store.isActive === false) {
+        toast.info("This user is restricted by admin");
+        return;
+      }
+
+      localStorage.setItem("id", store.id);
+
+      if (store.isAdmin === true) {
+        navigate('/admin');
+      } else {
+        toast.success('Login successful!');
+        navigate('/');
+      }
+    },
+  });
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-pink-100">
@@ -59,7 +62,7 @@ const Login = () => {
               name="email"
               value={values.email}
               onBlur={handleBlur}
-              autoComplete='new-password'
+              autoComplete="new-password"
               onChange={handleChange}
               className="w-full px-4 py-3 bg-gray-100 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400 outline-none"
               required
@@ -71,9 +74,9 @@ const Login = () => {
             <input
               type="password"
               name="password"
-              autoComplete='new-password'
               value={values.password}
               onBlur={handleBlur}
+              autoComplete="new-password"
               onChange={handleChange}
               className="w-full px-4 py-3 bg-gray-100 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400 outline-none"
               required
@@ -89,7 +92,7 @@ const Login = () => {
         </form>
 
         <p className="mt-6 text-center text-gray-700">
-          Don't have an account?
+          Don't have an account?{' '}
           <Link to="/signup">
             <span className="text-blue-500 font-semibold hover:underline">Register</span>
           </Link>
