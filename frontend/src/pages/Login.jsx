@@ -22,7 +22,7 @@ const Login = () => {
   }, []);
   useEffect(()=>{
       buttonref.current.focus()
-  })
+  },[])
 
   const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues,

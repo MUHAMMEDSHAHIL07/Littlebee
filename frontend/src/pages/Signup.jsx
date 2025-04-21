@@ -38,7 +38,7 @@ const Signup = () => {
   const buttonref = useRef()
   useEffect(()=>{
      buttonref.current.focus()
-  })
+  },[])
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-pink-100">
